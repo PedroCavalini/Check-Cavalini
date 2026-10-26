@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Checklist de Inspeção — Transporte Cavalini</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <div id="logo" title="Toque para inserir o logotipo">Logotipo</div>
+        <div>
+            <h1>Cavalini Check</h1><small>Transporte Cavalini · Inspeção de ônibus</small>
+        </div><button class="btn sec sm" id="lo" style="margin-left:auto;display:none" onclick="logout()">Sair</button>
+    </header>
+    <nav><button data-v="painel" class="on">Painel</button><button data-v="nova">Nova inspeção</button><button data-v="hist">Histórico</button></nav>
+    <main>
+        <section id="v-painel"></section>
+        <section id="v-nova" class="hide"></section>
+        <section id="v-hist" class="hide"></section>
+        <section id="v-det" class="hide"></section>
+    </main>
+    <div id="lg" style="position:fixed;inset:0;z-index:30;background:var(--bg);display:flex;align-items:center;justify-content:center;padding:16px">
+        <div class="card" style="width:100%;max-width:380px">
+            <h2>Cavalini Check — Entrar</h2><label>E-mail</label><input id="le" type="email" autocomplete="username"><label>Senha</label><input id="lp" type="password" autocomplete="current-password" onkeydown="if(event.key=='Enter')login()">
+            <div class="row"><button class="btn" onclick="login()">Entrar</button></div>
+            <p id="lm" class="mu"></p>
+        </div>
+    </div>
+    <div id="toast"></div>
+    <div id="prt"></div><input type="file" id="lf" accept="image/*" class="hide">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
